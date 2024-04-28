@@ -10,4 +10,11 @@
       <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="8.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="DemoIoc.Service\bin\Debug\net7.0\DemoIoc.Service.deps.json" />
+      <_ContentIncludedByDefault Remove="DemoIoc.Service\obj\DemoIoc.Service.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="DemoIoc.Service\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="DemoIoc.Service\obj\project.packagespec.json" />
+    </ItemGroup>
+
 </Project>
