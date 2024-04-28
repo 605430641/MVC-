@@ -5,6 +5,10 @@
 
 //builder.Host
 
+#region ioc容器替换
+
+// builder.Host.UseServiceProviderFactory(new DefaultAuthorizationHandlerContextFactory());
+#endregion
 
 #region 创建Builder
 //GOF23种设计模式之创建型模式之建造者模式 作用：将复杂对象的构造和它的表示分离,使同样的构建过程 可以创建不同的表示
