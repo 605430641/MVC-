@@ -29,3 +29,12 @@ D:\个人工作记录\MVCDemo\WebApplication1\obj\Debug\net7.0\refint\WebApplica
 D:\个人工作记录\MVCDemo\WebApplication1\obj\Debug\net7.0\WebApplication1.pdb
 D:\个人工作记录\MVCDemo\WebApplication1\obj\Debug\net7.0\WebApplication1.genruntimeconfig.cache
 D:\个人工作记录\MVCDemo\WebApplication1\obj\Debug\net7.0\ref\WebApplication1.dll
+D:\个人工作记录\MVCDemo\WebApplication1\bin\Debug\net7.0\log4net.dll
+D:\个人工作记录\MVCDemo\WebApplication1\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\个人工作记录\MVCDemo\WebApplication1\bin\Debug\net7.0\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
+D:\个人工作记录\MVCDemo\WebApplication1\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\个人工作记录\MVCDemo\WebApplication1\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\个人工作记录\MVCDemo\WebApplication1\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\个人工作记录\MVCDemo\WebApplication1\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\个人工作记录\MVCDemo\WebApplication1\obj\Debug\net7.0\WebApplication1.csproj.AssemblyReference.cache
+D:\个人工作记录\MVCDemo\WebApplication1\obj\Debug\net7.0\WebApplication1.csproj.CopyComplete
