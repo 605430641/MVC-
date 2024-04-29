@@ -14,6 +14,9 @@
 //GOF23种设计模式之创建型模式之建造者模式 作用：将复杂对象的构造和它的表示分离,使同样的构建过程 可以创建不同的表示
 //将一个复杂对象分解多个简单对象 然后一步步构建 相当于产品的组成部分不变 但是每一部分可以灵活选择
 //里面创建的各种 webapplication和webHostBuilder,configBuilder 都是为了创建web程序的初始化
+using IocDemo.InterFace;
+using IocDemo.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.视图的builder
 builder.Services.AddControllersWithViews();
@@ -30,11 +33,17 @@ builder.Services.AddControllersWithViews();
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole().AddDebug();
 // builder.Logging.AddLog4Net();      、、log4组件 需要添加log4net.config 暂时没有添加
- // builder.Logging.AddFilter("System",   LogLevel.Debug); //常用的日志组件
- // builder.Logging.AddFilter("Microsoft",LogLevel.Warning); //常用的日志组件
+// builder.Logging.AddFilter("System",   LogLevel.Debug); //常用的日志组件
+// builder.Logging.AddFilter("Microsoft",LogLevel.Warning); //常用的日志组件
 
 #endregion
 
+#region 开发者自定义IOC注册
+builder.Services.AddTransient<ITestServiceA, TestServiceA>();//瞬时
+builder.Services.AddSingleton<ITestServiceB, TestServiceB>();//单列模式
+builder.Services.AddScoped<ITestServiceC, TestServiceC>();//作用域单列
+
+#endregion
 
 var app = builder.Build();
 
