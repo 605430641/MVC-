@@ -16,6 +16,17 @@ namespace IocDemo.Service
             Console.WriteLine($"{this.GetType().Name}服务仓储实现类A");
         }
     }
+    public class TestServiceA2: ITestServiceA
+    {
+        public TestServiceA2() { Console.WriteLine($"{this.GetType().Name}被构造"); }
+
+        public void Show()
+        {
+            Console.WriteLine($"{this.GetType().Name}服务仓储实现类A");
+        }
+    }
+    
+    
     public class TestServiceB : ITestServiceB
     {
         public TestServiceB() { Console.WriteLine($"{this.GetType().Name}被构造"); }

@@ -16,6 +16,7 @@
 //里面创建的各种 webapplication和webHostBuilder,configBuilder 都是为了创建web程序的初始化
 using IocDemo.InterFace;
 using IocDemo.Service;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.视图的builder
@@ -39,10 +40,13 @@ builder.Logging.AddConsole().AddDebug();
 #endregion
 
 #region 开发者自定义IOC注册
-builder.Services.AddTransient<ITestServiceA, TestServiceA>();//瞬时
-builder.Services.AddSingleton<ITestServiceB, TestServiceB>();//单列模式
-builder.Services.AddScoped<ITestServiceC, TestServiceC>();//作用域单列
-
+// builder.Services.AddTransient<ITestServiceA, TestServiceA>();  //瞬时
+// builder.Services.AddTransient<ITestServiceA, TestServiceA2>(); //A不覆盖上面的  直接获取能获取A2 以最后的注册为准 如果想获取前面一个 可以获取集合然后得到A 如果想要覆盖如下
+// builder.Services.Replace(ServiceDescriptor.Transient<ITestServiceA,TestServiceA2>());//A2覆盖A
+// builder.Services.AddSingleton<ITestServiceB, TestServiceB>();  //单列模式
+// builder.Services.AddScoped<ITestServiceC, TestServiceC>();     //作用域单列
+//上面IOC 替换成下面的这个方法 组件统一封装
+builder.Services.ServiceRegisterNET7ServiceVoid();
 #endregion
 
 var app = builder.Build();

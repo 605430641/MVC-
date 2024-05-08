@@ -29,15 +29,21 @@ namespace WebApplication1.Controllers
         {
             _configuration        = configuration;
             _iLoggerFactory       = iLoggerFactory;
-            _testServiceA         = testServiceA;
-            _testServiceB         = testServiceB;
-            _testServiceC         = testServiceC;
+            _testServiceA         = testServiceA;  //瞬时
+            _testServiceB         = testServiceB;       //单例
+            _testServiceC         = testServiceC;            //作用域
             _testServiceD         = testServiceD;
             _testServiceE         = testServiceE;
-            _serviceProvider = serviceProvider;
+            _serviceProvider = serviceProvider;//容器实例  实例已经全部在容器了 
         }
         public IActionResult Index()
         {
+            //容器实例
+            var a = this._serviceProvider.GetService<ITestServiceE>();
+            Console.WriteLine($"{object.ReferenceEquals(this._testServiceA,a)}");
+
+            ITestServiceA              ListService = _serviceProvider.GetService<ITestServiceA>(); //获取单个 会得到最后一个注册的
+            IEnumerable<ITestServiceA> ListServices = _serviceProvider.GetServices<ITestServiceA>(); //获取集合
             return View();
         }
     }
