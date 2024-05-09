@@ -14,8 +14,11 @@
 //GOF23种设计模式之创建型模式之建造者模式 作用：将复杂对象的构造和它的表示分离,使同样的构建过程 可以创建不同的表示
 //将一个复杂对象分解多个简单对象 然后一步步构建 相当于产品的组成部分不变 但是每一部分可以灵活选择
 //里面创建的各种 webapplication和webHostBuilder,configBuilder 都是为了创建web程序的初始化
+using AgileFrameWork.WebCore;
 using IocDemo.InterFace;
 using IocDemo.Service;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.视图的builder
@@ -45,6 +48,12 @@ builder.Services.AddScoped<ITestServiceC, TestServiceC>();//作用域单列
 
 #endregion
 
+#region IOC Extend
+
+//替换默认的web核心控制器demo 不能放开 构建不了 只是演示改怎么替换
+//builder.Services.Replace(ServiceDescriptor.Transient<IControllerFactory,CustomControllerFactory>());
+
+#endregion
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

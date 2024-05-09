@@ -18,6 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AgileFrameWork.WebCore\AgileFrameWork.WebCore.csproj" />
       <ProjectReference Include="..\IocDemo.InterFace\IocDemo.InterFace.csproj" />
       <ProjectReference Include="..\IocDemo.Service\IocDemo.Service.csproj" />
     </ItemGroup>
